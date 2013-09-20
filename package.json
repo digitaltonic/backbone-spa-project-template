@@ -1,0 +1,13 @@
+{
+  "name": "MarionetteBoilerplate",
+  "version": "1.0.0",
+  "description": "RequireJS, Backbone, Marionette Boilerplate project for Mangahigh.com developers",
+  "homepage": "",
+  "devDependencies": {
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt": "~0.4.1",
+    "grunt-shell": "~0.4.0"
+  }
+}
