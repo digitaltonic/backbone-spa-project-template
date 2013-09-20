@@ -38,7 +38,44 @@ module.exports = function(grunt) {
           stdout: true
         },
         command: 'yuidoc --server'
+      },
+      runPythonTestServer: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'src'
+          }
+        },
+        command: 'python -m SimpleHTTPServer'
+      },
+      runPHPTestServer: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'src'
+          }
+        },
+        command: 'php -S 0.0.0.0:8000'
+      },
+      runPythonProductionServer: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'dist'
+          }
+        },
+        command: 'python -m SimpleHTTPServer'
+      },
+      runPHPProductionServer: {
+        options: {
+          stdout: true,
+          execOptions: {
+            cwd: 'dist'
+          }
+        },
+        command: 'php -S 0.0.0.0:8000'
       }
+
     }
   });
 
@@ -51,5 +88,10 @@ module.exports = function(grunt) {
   grunt.task.registerTask('build', ['lint', 'yuidoc', 'requirejs']);
   grunt.task.registerTask('generate-docs', ['yuidoc']);
   grunt.task.registerTask('show-docs', ['yuidoc', 'shell:runYuidocServer']);
+  grunt.task.registerTask('run-server-test:python', ['shell:runPythonTestServer']);
+  grunt.task.registerTask('run-server-test:php', ['shell:runPHPTestServer']);
+  grunt.task.registerTask('run-server-production:python', ['build', 'shell:runPythonProductionServer']);
+  grunt.task.registerTask('run-server-production:php', ['build', 'shell:runPHPProductionServer']);
+
 
 };

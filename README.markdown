@@ -26,28 +26,35 @@ Currently the test suite is browser based, although should run through phantomjs
 
 ## Running the Project Template
 
+After successfully running a command, app viewable at http://localhost:8000
+
 ###  In Development Mode.
-Fire up your favourite webserver:
+Fire up your favourite in-built webserver:
 
 ```
-cd src;
-php -S 0.0.0.0:8000
+grunt run-server-test:python
 ```
 
 or
 
 ```
-cd src
-python -m SimpleHTTPServer
+grunt run-server-test:php
 ```
 
 ###  In Production Mode.
 
+(note this will first build the app)
+
 ```
-grunt build
-cd dist
-php -S 0.0.0.0:8000
+grunt run-server-production:python
 ```
+
+or
+
+```
+grunt run-server-production:php
+```
+
 
 ##Running the Tests
 
