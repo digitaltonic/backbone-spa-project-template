@@ -1,11 +1,11 @@
 // Backbone.BabySitter
 // -------------------
-// v0.0.6
+// v0.1.0
 //
-// Copyright (c)2013 Derick Bailey, Muted Solutions, LLC.
+// Copyright (c)2014 Derick Bailey, Muted Solutions, LLC.
 // Distributed under MIT license
 //
-// http://github.com/babysitterjs/backbone.babysitter
+// http://github.com/marionettejs/backbone.babysitter
 
 (function (root, factory) {
   if (typeof exports === 'object') {
@@ -19,7 +19,7 @@
 
     define(['underscore', 'backbone'], factory);
 
-  }
+  } 
 }(this, function (_, Backbone) {
   "option strict";
 
@@ -30,7 +30,7 @@
 // shut down child views.
 
 Backbone.ChildViewContainer = (function(Backbone, _){
-
+  
   // Container Constructor
   // ---------------------
 
@@ -69,6 +69,7 @@ Backbone.ChildViewContainer = (function(Backbone, _){
       }
 
       this._updateLength();
+      return this;
     },
 
     // Find a view by the model that was attached to
@@ -97,7 +98,7 @@ Backbone.ChildViewContainer = (function(Backbone, _){
       return _.values(this._views)[index];
     },
 
-    // retrieve a view by it's `cid` directly
+    // retrieve a view by its `cid` directly
     findByCid: function(cid){
       return this._views[cid];
     },
@@ -124,6 +125,7 @@ Backbone.ChildViewContainer = (function(Backbone, _){
 
       // update the length
       this._updateLength();
+      return this;
     },
 
     // Call a method on every view in the container,
@@ -155,9 +157,9 @@ Backbone.ChildViewContainer = (function(Backbone, _){
   //
   // Mix in methods from Underscore, for iteration, and other
   // collection related features.
-  var methods = ['forEach', 'each', 'map', 'find', 'detect', 'filter',
-    'select', 'reject', 'every', 'all', 'some', 'any', 'include',
-    'contains', 'invoke', 'toArray', 'first', 'initial', 'rest',
+  var methods = ['forEach', 'each', 'map', 'find', 'detect', 'filter', 
+    'select', 'reject', 'every', 'all', 'some', 'any', 'include', 
+    'contains', 'invoke', 'toArray', 'first', 'initial', 'rest', 
     'last', 'without', 'isEmpty', 'pluck'];
 
   _.each(methods, function(method) {
@@ -172,7 +174,7 @@ Backbone.ChildViewContainer = (function(Backbone, _){
   return Container;
 })(Backbone, _);
 
-  return Backbone.ChildViewContainer;
+  return Backbone.ChildViewContainer; 
 
 }));
 
